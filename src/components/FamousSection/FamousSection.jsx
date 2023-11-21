@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './FamousSection.css';
 import FamousPersonForm from '../FamousPersonForm/FamousPersonForm.jsx'
+import FamousPersonList from '../FamousPersonList/FamousPersonList.jsx'
 
 
 function FamousSection() {
@@ -65,13 +66,9 @@ function FamousSection() {
         famousPersonRole={famousPersonRole}
         addPerson={addPerson}
       />
-        <ul>
-          {
-            famousPeopleArray.map((person) => {
-              return <li key={person.id}>{person.name} is famous for "{person.role}"</li>
-            })
-          }
-        </ul>
+      <FamousPersonList 
+        famousPeopleArray={famousPeopleArray}
+      />
       </section>
     );
 }
